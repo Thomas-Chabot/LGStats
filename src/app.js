@@ -1,11 +1,11 @@
 var Player = require("./Data/Player.js").Player
 var Fetch = require("./LeagueGaming/Fetch/Fetch.js")
-var CsvWriter = require("./Logging/Csv/SaveToCsv.js")
+var Logger = require("./Logging/Logging.js")
 var Constants = require("./Constants.js")
 
 async function main(){
     var playerStats = await Fetch.worldJuniors();
-    await CsvWriter.WritePlayerStats(playerStats, Constants.OutputFolder)
+    await Logger.WriteToCsv(playerStats, Constants.OutputFolder)
 }
 
 main()
