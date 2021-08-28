@@ -1,9 +1,11 @@
-var Player = require("./LeagueGaming/Player.js").Player
-var fetchDraftList = require("./LeagueGaming/Fetch/DraftList.js").fetch
+var Player = require("./Data/Player.js").Player
+var Fetch = require("./LeagueGaming/Fetch/Fetch.js")
+var CsvWriter = require("./Logging/Csv/SaveToCsv.js")
+var Constants = require("./Constants.js")
 
-async function getDraftList(){
-    var results = await fetchDraftList();
-    console.log(results)
+async function main(){
+    var playerStats = await Fetch.worldJuniors();
+    await CsvWriter.WritePlayerStats(playerStats, Constants.OutputFolder)
 }
 
-getDraftList()
+main()

@@ -1,4 +1,4 @@
-const { Player } = require("../Player.js");
+const { Player } = require("../../../Data/Player.js");
 var fetch = require("./FetchHelper.js")
 
 var draftListUrl = "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=draftlist&leagueid=94&seasonid=13"
